@@ -68,3 +68,15 @@ BBLAYERS ?= " \
   ${TOPDIR}/../meta-raspberrypi \
   "
 ```
+---
+### Creating Own Layer
+
+1. Copied the `meta-raspberrypi` layer.
+2. Pasted and renamed as `meta-lucasgb7`, removed all content except `conf/layer.conf`.
+3. Renamed the layer names `raspberrypi` to `lucasgb7`.
+4. Removed the `LICENSE_PATH`.
+5. Removed the `DEFAULT_TEST_SUITES`.
+6. On `BBFILES_DYNAMIC`, left just the `openembedded-layer`.
+7. Set `BBFILE_PRIORITY_lucasgb7` to 20.
+8. Added `raspberrypi` layer on `LAYERDEPENDS_lucasgb7`.
+9. Added the created layer on `poky/build/conf/bblayers.conf`.
